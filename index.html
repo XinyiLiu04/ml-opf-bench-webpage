@@ -303,7 +303,7 @@
     <!-- 标题 -->
     <div class="has-text-centered mb-4">
       <h2 class="title is-3 inline-block">
-        ML-ACOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
+        ML-DCOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
       </h2>
       <div class="leaderboard-title-underline"></div>
     </div>
@@ -313,7 +313,6 @@
       <table class="leaderboard-table">
         <thead>
           <tr>
-            <th>Type</th>
             <th>Method</th>
             <th>Accuracy (MAE Pg%)</th>
             <th>Feasibility (Viol Pg MW)</th>
@@ -325,8 +324,8 @@
         <tbody>
           <!-- Base行 -->
           <tr class="row-lightblue">
-            <td>-</td>
             <td class="font-medium">IPOPT</td>
+            <td>...</td>
             <td>...</td>
             <td>...</td>
             <td>...</td>
@@ -335,7 +334,6 @@
 
           <!-- CoT行 -->
           <tr class="row-lightblue">
-            <td>-</td>
             <td class="font-medium">DNN</td>
             <td><span class="val-green">...</span></td>
             <td><span class="val-red">...</span></td>
@@ -345,67 +343,42 @@
 
           <!-- S1-RCI行 -->
           <tr class="row-lightgreen">
-            <td class="font-medium">S1</td>
-            <td class="font-medium">RCI</td>
-            <td><span class="val-red">79.67 (-1.09)</span></td>
-            <td><span class="val-red">76.29 (-3.67)</span></td>
-            <td><span class="val-green">19.98 (+1.42)</span></td>
-            <td><span class="val-green">87.00 (+0.54)</span></td>
-            <td><span class="val-green">67.12 (+5.89)</span></td>
-            <td><span class="val-red">74.92 (-0.20)</span></td>
-            <td><span class="val-red">67.46 (-5.25)</span></td>
+            <td class="font-medium">PINN(KKT)</td>
+            <td><span class="val-red">...</span></td>
+            <td><span class="val-red">...</span></td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
           </tr>
 
           <!-- S1-CoVe行 -->
           <tr class="row-lightgreen">
-            <td class="font-medium">S1</td>
-            <td class="font-medium">CoVe</td>
-            <td><span class="val-green">83.04 (+2.28)</span></td>
-            <td><span class="val-red">78.54 (-1.42)</span></td>
-            <td><span class="val-green">37.41 (+18.85)</span></td>
-            <td><span class="val-green">92.23 (+5.77)</span></td>
-            <td><span class="val-green">71.12 (+9.89)</span></td>
-            <td><span class="val-green">79.30 (+4.18)</span></td>
-            <td><span class="val-green">76.96 (+4.25)</span></td>
+            <td class="font-medium">PINN(Dual)</td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-red">...</span></td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
           </tr>
 
           <!-- S1-Self-Refine行 -->
           <tr class="row-lightgreen">
-            <td class="font-medium">S1</td>
-            <td class="font-medium">Self-Refine</td>
-            <td><span class="val-green">85.49 (+4.73)</span></td>
-            <td><span class="val-green">81.06 (+1.10)</span></td>
-            <td><span class="val-green">40.69 (+22.13)</span></td>
-            <td><span class="val-green">91.74 (+5.28)</span></td>
-            <td><span class="val-green">69.46 (+8.23)</span></td>
-            <td><span class="val-green">81.77 (+6.65)</span></td>
+            <td class="font-medium">DeepOPF+</td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
             <td>-</td>
           </tr>
 
           <!-- S2-Reflection-v2行 -->
           <tr class="row-lightyellow">
-            <td class="font-medium">S2</td>
-            <td class="font-medium">Reflection-v2</td>
-            <td><span class="val-green">87.98 (+7.22)</span></td>
-            <td><span class="val-green">82.21 (+2.25)</span></td>
-            <td><span class="val-green">26.85 (+8.29)</span></td>
-            <td><span class="val-green">89.87 (+3.41)</span></td>
-            <td><span class="val-green">68.23 (+7.00)</span></td>
-            <td><span class="val-green">81.36 (+6.24)</span></td>
+            <td class="font-medium">CNN</td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
+            <td><span class="val-green">...</span></td>
             <td>-</td>
-          </tr>
-
-          <!-- Average行 -->
-          <tr class="row-lightgray">
-            <td>-</td>
-            <td class="font-medium">Average</td>
-            <td><span class="val-green">83.54 (+2.78)</span></td>
-            <td><span class="val-green">80.18 (+0.22)</span></td>
-            <td><span class="val-green">31.28 (+12.72)</span></td>
-            <td><span class="val-red">85.04 (-1.42)</span></td>
-            <td><span class="val-green">68.47 (+7.24)</span></td>
-            <td><span class="val-green">80.15 (+5.03)</span></td>
-            <td><span class="val-green">73.80 (+1.09)</span></td>
           </tr>
         </tbody>
       </table>
