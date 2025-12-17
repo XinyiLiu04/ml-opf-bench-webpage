@@ -28,7 +28,36 @@
     .sup-1 { color: #006633; }      
     .sup-2 { color: #004422; }      
     .sup-3 { color: #009944; }      
-    .sup-corr { color: #006633; }   
+    .sup-corr { color: #006633; }
+
+    .leaderboard-table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin: 0 auto;
+    }
+    .leaderboard-table thead {
+      background: #363636; /* Bulma深灰，匹配目标表头 */
+      color: white;
+    }
+    .leaderboard-table th, .leaderboard-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    /* 行背景色（匹配目标） */
+    .row-lightblue { background: #eef2ff; }
+    .row-lightgreen { background: #e8f5e9; }
+    .row-lightyellow { background: #fff8e1; }
+    .row-lightgray { background: #f5f5f5; }
+    /* 单元格背景色（比行色深一点） */
+    .cell-lightblue { background: #e3eafd; }
+    .cell-lightgreen { background: #dcedc8; }
+    .cell-lightyellow { background: #fff3cd; }
+    .cell-lightgray { background: #eeeeee; }
+    /* 数值颜色（正负区分） */
+    .val-green { color: #2e7d32; } /* 正向绿色 */
+    .val-red { color: #c62828; }   /* 负向红色 */
+    
   </style>
   
   <meta charset="utf-8">
@@ -269,183 +298,123 @@
 </section>
 <!-- End paper abstract -->
 
-  <!-- Leaderboard -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaderboard</title>
-  <!-- 引入Tailwind CSS（快速样式） -->
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-  <!-- 引入Font Awesome（奖杯图标） -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="p-6 bg-white">
-  <!-- 标题区域（奖杯+Leaderboard） -->
-  <div class="text-center mb-6">
-    <<i class="fa-solid fa-trophy text-yellow-500 text-4xl inline-block mr-2"></</i>
-    <h1 class="text-3xl font-bold text-gray-800 inline-block">Leaderboard</h1>
+<!-- Leaderboard -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- 标题（奖杯+Leaderboard） -->
+    <div class="has-text-centered mb-6">
+      <<i class="fa-solid fa-trophy text-yellow-500 text-4xl inline-block mr-2"></</i>
+      <h2 class="title is-3 inline-block">Leaderboard</h2>
+    </div>
+
+    <!-- 表格主体 -->
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <<th>Type</</th>
+          <<th>Method</</th>
+          <<th>HotpotQA (↑)</</th>
+          <<th>CS-QA (↑)</</th>
+          <<th>GPQA (↑)</</th>
+          <<th>GSM8K (↑)</</th>
+          <<th>AQUA (↑)</</th>
+          <<th>MATH (↑)</</th>
+          <<th>HumanEval (↑)</</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Base行 -->
+        <tr class="row-lightblue">
+          <td>-</td>
+          <td class="font-medium">Base</td>
+          <td class="cell-lightblue">80.76</td>
+          <td class="cell-lightblue">79.96</td>
+          <td class="cell-lightblue">18.56</td>
+          <td class="cell-lightblue">86.46</td>
+          <td class="cell-lightblue">61.23</td>
+          <td class="cell-lightblue">75.12</td>
+          <td class="cell-lightblue">72.71</td>
+        </tr>
+
+        <!-- CoT行 -->
+        <tr class="row-lightblue">
+          <td>-</td>
+          <td class="font-medium">CoT</td>
+          <td class="cell-lightblue"><span class="val-green">83.29 (+2.53)</span></td>
+          <td class="cell-lightblue"><span class="val-red">78.03 (-1.93)</span></td>
+          <td class="cell-lightblue"><span class="val-red">16.52 (-2.04)</span></td>
+          <td class="cell-lightblue"><span class="val-green">91.96 (+5.50)</span></td>
+          <td class="cell-lightblue"><span class="val-red">60.24 (-0.99)</span></td>
+          <td class="cell-lightblue"><span class="val-red">72.59 (-2.53)</span></td>
+          <td class="cell-lightblue"><span class="val-red">60.10 (-12.61)</span></td>
+        </tr>
+
+        <!-- S1区域（浅绿行） -->
+        <tr class="row-lightgreen">
+          <td class="font-medium">S1</td>
+          <td class="font-medium">RCI</td>
+          <td class="cell-lightgreen"><span class="val-red">79.67 (-1.09)</span></td>
+          <td class="cell-lightgreen"><span class="val-red">76.29 (-3.67)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">19.98 (+1.42)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">87.00 (+0.54)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">67.12 (+5.89)</span></td>
+          <td class="cell-lightgreen"><span class="val-red">74.92 (-0.20)</span></td>
+          <td class="cell-lightgreen"><span class="val-red">67.46 (-5.25)</span></td>
+        </tr>
+
+        <tr class="row-lightgreen">
+          <td class="font-medium">S1</td>
+          <td class="font-medium">CoVe</td>
+          <td class="cell-lightgreen"><span class="val-green">83.04 (+2.28)</span></td>
+          <td class="cell-lightgreen"><span class="val-red">78.54 (-1.42)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">37.41 (+18.85)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">92.23 (+5.77)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">71.12 (+9.89)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">79.30 (+4.18)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">76.96 (+4.25)</span></td>
+        </tr>
+
+        <tr class="row-lightgreen">
+          <td class="font-medium">S1</td>
+          <td class="font-medium">Self-Refine</td>
+          <td class="cell-lightgreen"><span class="val-green">85.49 (+4.73)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">81.06 (+1.10)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">40.69 (+22.13)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">91.74 (+5.28)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">69.46 (+8.23)</span></td>
+          <td class="cell-lightgreen"><span class="val-green">81.77 (+6.65)</span></td>
+          <td class="cell-lightgreen">-</td>
+        </tr>
+
+        <!-- S2区域（浅黄行） -->
+        <tr class="row-lightyellow">
+          <td class="font-medium">S2</td>
+          <td class="font-medium">Reflection-v2</td>
+          <td class="cell-lightyellow"><span class="val-green">87.98 (+7.22)</span></td>
+          <td class="cell-lightyellow"><span class="val-green">82.21 (+2.25)</span></td>
+          <td class="cell-lightyellow"><span class="val-green">26.85 (+8.29)</span></td>
+          <td class="cell-lightyellow"><span class="val-green">89.87 (+3.41)</span></td>
+          <td class="cell-lightyellow"><span class="val-green">68.23 (+7.00)</span></td>
+          <td class="cell-lightyellow"><span class="val-green">81.36 (+6.24)</span></td>
+          <td class="cell-lightyellow">-</td>
+        </tr>
+
+        <!-- Average行 -->
+        <tr class="row-lightgray">
+          <td>-</td>
+          <td class="font-medium">Average</td>
+          <td class="cell-lightgray"><span class="val-green">83.54 (+2.78)</span></td>
+          <td class="cell-lightgray"><span class="val-green">80.18 (+0.22)</span></td>
+          <td class="cell-lightgray"><span class="val-green">31.28 (+12.72)</span></td>
+          <td class="cell-lightgray"><span class="val-red">85.04 (-1.42)</span></td>
+          <td class="cell-lightgray"><span class="val-green">68.47 (+7.24)</span></td>
+          <td class="cell-lightgray"><span class="val-green">80.15 (+5.03)</span></td>
+          <td class="cell-lightgray"><span class="val-green">73.80 (+1.09)</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <!-- Leaderboard表格 -->
-  <table class="w-full border-collapse shadow-sm">
-    <!-- 表头 -->
-    <thead>
-      <tr class="bg-gray-600 text-white">
-        <<th class="py-3 px-4 text-left">Type</</th>
-        <<th class="py-3 px-4 text-left">Method</</th>
-        <<th class="py-3 px-4 text-center">HotpotQA (↑)</</th>
-        <<th class="py-3 px-4 text-center">CS-QA (↑)</</th>
-        <<th class="py-3 px-4 text-center">GPQA (↑)</</th>
-        <<th class="py-3 px-4 text-center">GSM8K (↑)</</th>
-        <<th class="py-3 px-4 text-center">AQUA (↑)</</th>
-        <<th class="py-3 px-4 text-center">MATH (↑)</</th>
-        <<th class="py-3 px-4 text-center">HumanEval (↑)</</th>
-      </tr>
-    </thead>
-    <!-- 表格内容 -->
-    <tbody>
-      <!-- Base行 -->
-      <tr class="bg-blue-50">
-        <td class="py-2 px-4">-</td>
-        <td class="py-2 px-4 font-medium">Base</td>
-        <td class="py-2 px-4 text-center bg-blue-100">80.76</td>
-        <td class="py-2 px-4 text-center bg-blue-100">79.96</td>
-        <td class="py-2 px-4 text-center bg-blue-100">18.56</td>
-        <td class="py-2 px-4 text-center bg-blue-100">86.46</td>
-        <td class="py-2 px-4 text-center bg-blue-100">61.23</td>
-        <td class="py-2 px-4 text-center bg-blue-100">75.12</td>
-        <td class="py-2 px-4 text-center bg-blue-100">72.71</td>
-      </tr>
-
-      <!-- CoT行 -->
-      <tr class="bg-blue-50">
-        <td class="py-2 px-4">-</td>
-        <td class="py-2 px-4 font-medium">CoT</td>
-        <td class="py-2 px-4 text-center bg-blue-100"><span class="text-green-600">83.29 (+2.53)</span></td>
-        <td class="py-2 px-4 text-center bg-blue-100"><span class="text-red-600">78.03 (-1.93)</span></td>
-        <td class="py-2 px-4 text-center bg-blue-100"><span class="text-red-600">16.52 (-2.04)</span></td>
-        <td class="py-2 px-4 text-center bg-blue-100"><span class="text-green-600">91.96 (+5.50)</span></td>
-        <td class="py-2 px-4 text-center bg-blue-100"><span class="text-red-600">60.24 (-0.99)</span></td>
-        <td class="py-2 px-4 text-center bg-blue-100"><span class="text-red-600">72.59 (-2.53)</span></td>
-        <td class="py-2 px-4 text-center bg-blue-100"><span class="text-red-600">60.10 (-12.61)</span></td>
-      </tr>
-
-      <!-- S1区域（浅绿背景） -->
-      <tr class="bg-green-50">
-        <td class="py-2 px-4 font-medium">S1</td>
-        <td class="py-2 px-4 font-medium">RCI</td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">79.67 (-1.09)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">76.29 (-3.67)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">19.98 (+1.42)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">87.00 (+0.54)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">67.12 (+5.89)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">74.92 (-0.20)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">67.46 (-5.25)</span></td>
-      </tr>
-
-      <tr class="bg-green-50">
-        <td class="py-2 px-4 font-medium">S1</td>
-        <td class="py-2 px-4 font-medium">CoVe</td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">83.04 (+2.28)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">78.54 (-1.42)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">37.41 (+18.85)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">92.23 (+5.77)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">71.12 (+9.89)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">79.30 (+4.18)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">76.96 (+4.25)</span></td>
-      </tr>
-
-      <tr class="bg-green-50">
-        <td class="py-2 px-4 font-medium">S1</td>
-        <td class="py-2 px-4 font-medium">Self-Refine</td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">85.49 (+4.73)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">81.06 (+1.10)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">40.69 (+22.13)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">91.74 (+5.28)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">69.46 (+8.23)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">81.77 (+6.65)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100">-</td>
-      </tr>
-
-      <tr class="bg-green-50">
-        <td class="py-2 px-4 font-medium">S1</td>
-        <td class="py-2 px-4 font-medium">Reflection-v1</td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">69.52 (-11.24)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">63.89 (-16.07)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-green-600">19.25 (+0.69)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">67.64 (-18.82)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">48.33 (-12.90)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100"><span class="text-red-600">65.01 (-10.11)</span></td>
-        <td class="py-2 px-4 text-center bg-green-100">-</td>
-      </tr>
-
-      <!-- S2区域（浅黄背景） -->
-      <tr class="bg-yellow-50">
-        <td class="py-2 px-4 font-medium">S2</td>
-        <td class="py-2 px-4 font-medium">Reflection-v2</td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">87.98 (+7.22)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">82.21 (+2.25)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">26.85 (+8.29)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">89.87 (+3.41)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">68.23 (+7.00)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">81.36 (+6.24)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100">-</td>
-      </tr>
-
-      <tr class="bg-yellow-50">
-        <td class="py-2 px-4 font-medium">S2</td>
-        <td class="py-2 px-4 font-medium">RARR</td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">85.47 (+4.71)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">80.57 (+0.61)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">36.82 (+18.26)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">88.92 (+2.46)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">66.81 (+5.58)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">82.78 (+7.66)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">77.35 (+4.64)</span></td>
-      </tr>
-
-      <tr class="bg-yellow-50">
-        <td class="py-2 px-4 font-medium">S2</td>
-        <td class="py-2 px-4 font-medium">RATT</td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-red-600">79.59 (-1.17)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">80.81 (+0.85)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">25.90 (+7.34)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">88.08 (+1.62)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">68.06 (+6.83)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">80.74 (+5.62)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">73.44 (+0.73)</span></td>
-      </tr>
-
-      <tr class="bg-yellow-50">
-        <td class="py-2 px-4 font-medium">S2</td>
-        <td class="py-2 px-4 font-medium">CRITIC</td>
-        <td class="py-2 px-4 text-center bg-yellow-100">-</td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-green-600">81.77 (+1.81)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100">-</td>
-        <td class="py-2 px-4 text-center bg-yellow-100"><span class="text-red-600">77.46 (-9.00)</span></td>
-        <td class="py-2 px-4 text-center bg-yellow-100">-</td>
-        <td class="py-2 px-4 text-center bg-yellow-100">-</td>
-        <td class="py-2 px-4 text-center bg-yellow-100">-</td>
-      </tr>
-
-      <!-- Average行 -->
-      <tr class="bg-gray-50">
-        <td class="py-2 px-4">-</td>
-        <td class="py-2 px-4 font-medium">Average</td>
-        <td class="py-2 px-4 text-center bg-gray-100"><span class="text-green-600">83.54 (+2.78)</span></td>
-        <td class="py-2 px-4 text-center bg-gray-100"><span class="text-green-600">80.18 (+0.22)</span></td>
-        <td class="py-2 px-4 text-center bg-gray-100"><span class="text-green-600">31.28 (+12.72)</span></td>
-        <td class="py-2 px-4 text-center bg-gray-100"><span class="text-red-600">85.04 (-1.42)</span></td>
-        <td class="py-2 px-4 text-center bg-gray-100"><span class="text-green-600">68.47 (+7.24)</span></td>
-        <td class="py-2 px-4 text-center bg-gray-100"><span class="text-green-600">80.15 (+5.03)</span></td>
-        <td class="py-2 px-4 text-center bg-gray-100"><span class="text-green-600">73.80 (+1.09)</span></td>
-      </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+</section>
 <!-- End Leaderboard -->
   
 
