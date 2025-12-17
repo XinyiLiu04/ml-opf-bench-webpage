@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    /* 1. 彩色标题：模仿示例的蓝紫交替配色 */
+    .text-blue { color: #4285F4; /* 谷歌蓝 */ }
+    .text-purple { color: #A64AC9; /* 浅紫 */ }
+    
+    /* 2. 作者/机构上标颜色对应（和示例一致） */
+    .sup-1 { color: #1A73E8; /* 机构1对应蓝色 */ }
+    .sup-2 { color: #9C27B0; /* 机构2对应紫色 */ }
+    .sup-3 { color: #EA4335; /* 机构3对应红色 */ }
+    .sup-corr { color: #4285F4; /* 通讯作者标记色 */ }
+  </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -155,54 +166,73 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">ML-OPF-Bench</h1>
-            
-            <div class="is-size-5 publication-authors mt-3">
+            <!-- 标题部分：彩色“ML-OPF-Bench”在上，副标题在下（和示例一致） -->
+            <h1 class="title is-1 publication-title">
+              <span class="text-blue">M</span><span class="text-purple">L</span>-<span class="text-blue">O</span><span class="text-purple">P</span>-<span class="text-blue">B</span><span class="text-purple">e</span><span class="text-blue">n</span><span class="text-purple">c</span><span class="text-blue">h</span>
+            </h1>
+            <h2 class="subtitle is-3 has-text-centered mt-2">
+              Benchmarking Machine Learning Paradigms for Optimal Power Flow
+            </h2>
+
+            <!-- 作者列表：上标颜色和机构对应 -->
+            <div class="is-size-5 publication-authors mt-4">
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Xinyi Liu</a><sup>1</sup>,
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Xinyi Liu</a><sup class="sup-1">1</sup>,
               </span>
               <span class="author-block">
-                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Xuan He</a><sup>2</sup>,
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Xuan He</a><sup class="sup-2">2</sup>,
               </span>
               <span class="author-block">
-                <a href="https://sites.google.com/view/yizechen" target="_blank">Yize Chen</a><sup>3,†</sup>
+                <a href="https://sites.google.com/view/yizechen" target="_blank">Yize Chen</a><sup class="sup-3">3</sup><sup class="sup-corr">,†</sup>
               </span>
             </div>
 
-           <div class="is-size-6 publication-authors mt-2">
-              <div class="columns is-centered is-gap-1">
-                <div class="column is-4 has-text-centered">
-                  <sup>1</sup>South China University of Technology
+            <!-- 机构部分：上标颜色对应+紧凑并排（和示例一致） -->
+            <div class="is-size-6 publication-authors mt-2">
+              <div class="columns is-centered is-gap-2">
+                <div class="column has-text-centered">
+                  <sup class="sup-1">1</sup>South China University of Technology (Guangzhou, China)
                 </div>
-                <div class="column is-4 has-text-centered">
-                  <sup>2</sup>Hong Kong University of Science and Technology 
+                <div class="column has-text-centered">
+                  <sup class="sup-2">2</sup>Hong Kong University of Science and Technology (Hong Kong, China)
                 </div>
-                <div class="column is-4 has-text-centered">
-                  <sup>3</sup>University of Alberta 
+                <div class="column has-text-centered">
+                  <sup class="sup-3">3</sup>University of Alberta (Edmonton, Canada)
                 </div>
+              </div>
+              <!-- 通讯作者说明 -->
+              <div class="has-text-centered mt-1">
+                <sup class="sup-corr">†</sup>Corresponding Author: Yize Chen (Email: yizechen@ualberta.ca)
               </div>
             </div>
 
-
+            <!-- 论文链接按钮 -->
             <div class="publication-links mt-4">
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span class="icon"><<i class="fas fa-file-pdf"></</i></span>
                   <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><<i class="fas fa-file-pdf"></</i></span>
+                  <span>Supplementary</span>
                 </a>
               </span>
               <span class="link-block">
                 <a href="https://github.com/YOUR REPO HERE" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span class="icon"><<i class="fab fa-github"></</i></span>
                   <span>Code</span>
                 </a>
               </span>
               <span class="link-block">
                 <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span class="icon"><<i class="ai ai-arxiv"></</i></span>
                   <span>arXiv</span>
                 </a>
               </span>
