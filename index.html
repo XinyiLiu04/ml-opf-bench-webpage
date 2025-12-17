@@ -5,7 +5,24 @@
   <link rel="icon" href="static/images/webpage_logo.ico" type="image/x-icon">
   
   <style>
-    .no-wrap-title {
+  .font-medium {
+  font-weight: 600;
+}
+    
+  .lab-logo {
+  width: 120px; /* 控制Logo宽度，可根据实际调整 */
+  height: auto; /* 自动等比缩放，避免变形 */
+  display: inline-block; /* 确保居中显示 */
+}
+
+/* 移动端Logo适配（可选） */
+@media (max-width: 768px) {
+  .lab-logo {
+    width: 80px; /* 手机端缩小Logo */
+  }
+}
+    
+  .no-wrap-title {
   white-space: nowrap; /* 核心：禁止换行 */
   margin: 0 auto;      /* 确保标题居中 */
   display: inline-block; /* 适配居中+不换行 */
