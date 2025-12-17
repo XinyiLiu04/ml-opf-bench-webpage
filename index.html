@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <style>
-    /* 1. 彩色标题：模仿示例的蓝紫交替配色 */
-    .text-blue { color: #4285F4; /* 谷歌蓝 */ }
-    .text-purple { color: #A64AC9; /* 浅紫 */ }
+    /* 1. 彩色标题（ML-OPF-Bench）：对应logo的深绿+亮绿 */
+    .text-blue { color: #006633; }  /* 替代原来的蓝色 → logo里A的深绿色 */
+    .text-purple { color: #00CC66; }/* 替代原来的紫色 → logo里叶子的亮绿色 */
     
-    /* 2. 作者/机构上标颜色对应（和示例一致） */
-    .sup-1 { color: #1A73E8; /* 机构1对应蓝色 */ }
-    .sup-2 { color: #9C27B0; /* 机构2对应紫色 */ }
-    .sup-3 { color: #EA4335; /* 机构3对应红色 */ }
-    .sup-corr { color: #4285F4; /* 通讯作者标记色 */ }
+    /* 2. 作者/机构上标：绿色系不同深浅，对应logo色调 */
+    .sup-1 { color: #006633; }      /* 第一作者/机构上标1：logo深绿色 */
+    .sup-2 { color: #004422; }      /* 第二作者/机构上标2：logo墨绿色 */
+    .sup-3 { color: #009944; }      /* 第三作者/机构上标3：logo中间绿色 */
+    .sup-corr { color: #006633; }   /* 通讯作者†：和标题深绿一致（logo主色） */
   </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -188,13 +188,13 @@
             <div class="is-size-6 publication-authors mt-2">
               <div class="columns is-centered is-gap-2">
                 <div class="column has-text-centered">
-                  <sup class="sup-1">1</sup>South China University of Technology 
+                  <sup class="sup-1">1</sup>South China University of Technology (Guangzhou, China) 
                 </div>
                 <div class="column has-text-centered">
-                  <sup class="sup-2">2</sup>Hong Kong University of Science and Technology 
+                  <sup class="sup-2">2</sup>Hong Kong University of Science and Technology (Guangzhou, China)
                 </div>
                 <div class="column has-text-centered">
-                  <sup class="sup-3">3</sup>University of Alberta 
+                  <sup class="sup-3">3</sup>University of Alberta (Edmonton, Canada)
                 </div>
               </div>
             </div>
