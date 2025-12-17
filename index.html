@@ -148,110 +148,65 @@
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
-
 <main id="main-content">
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- 修复标题格式：论文标题放在标签内容中，class保留样式 -->
+            <!-- 论文标题：样式+内容分离，保留Bulma的标题样式 -->
             <h1 class="title is-1 publication-title">ML-OPF-Bench: Benchmarking Machine Learning Paradigms for Optimal Power Flow</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- 作者列表：添加机构上标1/2/3，第三作者加通讯标注† -->
+            
+            <!-- 作者列表：排版紧凑，机构上标+通讯标注规范 -->
+            <div class="is-size-5 publication-authors mt-3">
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Xinyi Liu</a><sup>1</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Xinyi Liu</a><sup>1</sup>,
+              </span>
               <span class="author-block">
-                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Xuan He</a><sup>2</sup>,</span>
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Xuan He</a><sup>2</sup>,
+              </span>
               <span class="author-block">
                 <a href="https://sites.google.com/view/yizechen" target="_blank">Yize Chen</a><sup>3,†</sup>
               </span>
             </div>
 
-            <div class="is-size-5 publication-authors mt-2">
-              <!-- 机构列表：对应上标1/2/3，分行显示更清晰 -->
+            <!-- 机构+通讯作者说明：字体稍小，排版更美观 -->
+            <div class="is-size-6 publication-authors mt-2">
               <span class="author-block">
-                <sup>1</sup>South China University of Technology<br>
-                <sup>2</sup>Hong Kong University of Science and Technology<br>
-                <sup>3</sup>University of Alberta<br>
-                <!-- 通讯作者说明：† 是学术通用通讯标注，补充文字说明 -->
-                <sup>†</sup>Corresponding Author (Email: 你的通讯作者邮箱@ualberta.ca)
+                <sup>1</sup>South China University of Technology (Guangzhou, China)<br>
+                <sup>2</sup>Hong Kong University of Science and Technology (Hong Kong, China)<br>
+                <sup>3</sup>University of Alberta (Edmonton, Canada)<br>
+                <sup>†</sup>Corresponding Author: Yize Chen (Email: yizechen@ualberta.ca)
               </span>
-              <!-- 删掉原有的同等贡献说明（因非同等贡献） -->
             </div>
 
-            <div class="column has-text-centered mt-4">
-              <div class="publication-links">
-                <!-- 原有链接部分保留，无需修改 -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><<i class="fas fa-file-pdf"></</i></span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><<i class="fas fa-file-pdf"></</i></span>
-                    <span>Supplementary</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><<i class="fab fa-github"></</i></span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><<i class="ai ai-arxiv"></</i></span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/XinyiLiu04/ml-opf-bench/" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
+            <!-- 论文链接按钮：去掉冗余column嵌套，间距优化 -->
+            <div class="publication-links mt-4">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
@@ -260,8 +215,8 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 
 <!-- Paper abstract -->
