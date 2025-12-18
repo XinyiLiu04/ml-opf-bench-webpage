@@ -5,7 +5,7 @@
   <link rel="icon" href="static/images/webpage_logo.ico" type="image/x-icon">
   
   <style>
-    /* ========== More Works 模块（完全匹配参考页样式） ========== */
+    /* ========== More Works 模块（100%匹配参考页：白色背景+深灰文字） ========== */
     .more-works-container {
       position: fixed;
       top: 20px;          /* 参考页一致：顶部20px */
@@ -17,22 +17,24 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: #363636;       /* 参考页按钮底色：深灰 */
-      color: #ffffff;            /* 参考页按钮文字：纯白 */
-      border: none;
+      background: #ffffff;       /* 参考页按钮真实背景：白色 */
+      color: #363636;            /* 参考页按钮文字：深灰色 */
+      border: 1px solid #e0e0e0;/* 参考页按钮边框：浅灰色 */
       border-radius: 4px;        /* 参考页按钮圆角：4px */
       padding: 0.5rem 1rem;      /* 参考页按钮内边距 */
       cursor: pointer;
       font-size: 0.9rem;         /* 参考页按钮字体大小 */
       transition: background 0.2s ease; /* 参考页过渡效果 */
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 参考页按钮阴影 */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* 参考页按钮轻微阴影 */
     }
     .more-works-btn:hover {
-      background: #212121;       /* 参考页按钮hover底色：更深灰 */
+      background: #f5f5f5;       /* 参考页按钮hover背景：浅灰色 */
+      color: #212121;            /* 参考页按钮hover文字：更深灰 */
     }
     .dropdown-arrow {
       font-size: 0.7rem;         /* 参考页箭头大小 */
       transition: transform 0.2s ease;
+      color: #363636;            /* 参考页箭头颜色：深灰 */
     }
     .more-works-btn.active .dropdown-arrow {
       transform: rotate(180deg); /* 参考页箭头旋转效果 */
@@ -348,10 +350,10 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown（样式100%匹配参考页） -->
+  <!-- More Works Dropdown（最终确认：白色背景+深灰文字，完全匹配参考页） -->
   <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
+      <i class="fas fa-flask" style="color: #363636;"></i> <!-- 图标颜色：深灰 -->
       More Works
       <i class="fas fa-chevron-down dropdown-arrow"></i>
     </button>
