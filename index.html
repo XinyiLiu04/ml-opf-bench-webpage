@@ -5,139 +5,140 @@
   <link rel="icon" href="static/images/webpage_logo.ico" type="image/x-icon">
   
   <style>
-    /* More Works 模块样式（替换为参考页样式） */
+    /* ========== More Works 模块（完全匹配参考页样式） ========== */
     .more-works-container {
       position: fixed;
-      top: 20px;
-      right: 20px;
+      top: 20px;          /* 参考页一致：顶部20px */
+      right: 20px;        /* 参考页一致：右侧20px */
       z-index: 998;
+      font-family: 'Inter', sans-serif; /* 参考页一致：Inter字体 */
     }
     .more-works-btn {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: #363636;
-      color: white;
+      background: #363636;       /* 参考页按钮底色：深灰 */
+      color: #ffffff;            /* 参考页按钮文字：纯白 */
       border: none;
-      border-radius: 4px;
-      padding: 0.5rem 1rem;
+      border-radius: 4px;        /* 参考页按钮圆角：4px */
+      padding: 0.5rem 1rem;      /* 参考页按钮内边距 */
       cursor: pointer;
-      font-size: 0.9rem;
-      transition: background 0.2s;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-size: 0.9rem;         /* 参考页按钮字体大小 */
+      transition: background 0.2s ease; /* 参考页过渡效果 */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 参考页按钮阴影 */
     }
     .more-works-btn:hover {
-      background: #212121;
+      background: #212121;       /* 参考页按钮hover底色：更深灰 */
     }
     .dropdown-arrow {
-      font-size: 0.7rem;
-      transition: transform 0.2s;
+      font-size: 0.7rem;         /* 参考页箭头大小 */
+      transition: transform 0.2s ease;
     }
     .more-works-btn.active .dropdown-arrow {
-      transform: rotate(180deg);
+      transform: rotate(180deg); /* 参考页箭头旋转效果 */
     }
     .more-works-dropdown {
       position: absolute;
       top: 100%;
-      right: 0;
-      margin-top: 0.5rem;
-      width: 380px;
-      background: white;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      right: 0;                 /* 参考页下拉框对齐：右对齐 */
+      margin-top: 0.5rem;       /* 参考页按钮与下拉框间距 */
+      width: 380px;             /* 参考页下拉框宽度 */
+      background: #ffffff;      /* 参考页下拉框底色：纯白 */
+      border-radius: 6px;       /* 参考页下拉框圆角：6px */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 参考页下拉框阴影 */
       padding: 0;
       list-style: none;
       display: none;
       max-height: 70vh;
       overflow-y: auto;
       z-index: 999;
+      border: 1px solid #eee;   /* 参考页下拉框边框：浅灰 */
     }
     .more-works-dropdown.show {
       display: block;
     }
-    /* 参考页样式适配 - dropdown-header */
+    /* 参考页下拉框头部样式 */
     .dropdown-header {
-      padding: 1rem;
-      border-bottom: 1px solid #eee;
+      padding: 1rem;            /* 参考页头部内边距 */
+      border-bottom: 1px solid #eee; /* 参考页头部下边框 */
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .dropdown-header h4 {
       margin: 0;
-      font-size: 1.1rem;
-      color: #363636;
-      font-weight: 600;
+      font-size: 1.1rem;        /* 参考页头部标题大小 */
+      color: #363636;           /* 参考页头部标题颜色 */
+      font-weight: 600;         /* 参考页头部标题字重 */
     }
     .close-btn {
       background: transparent;
       border: none;
-      color: #7a7a7a;
+      color: #7a7a7a;           /* 参考页关闭按钮默认颜色 */
       cursor: pointer;
       font-size: 1rem;
       padding: 0.25rem;
-      border-radius: 50%;
-      width: 32px;
+      border-radius: 50%;       /* 参考页关闭按钮圆形 */
+      width: 32px;              /* 参考页关闭按钮尺寸 */
       height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .close-btn:hover {
-      background: #f5f5f5;
-      color: #363636;
+      background: #f5f5f5;      /* 参考页关闭按钮hover背景 */
+      color: #363636;           /* 参考页关闭按钮hover颜色 */
     }
-    /* 参考页样式适配 - works-list */
+    /* 参考页下拉框列表样式 */
     .works-list {
-      padding: 0.5rem 0;
+      padding: 0.5rem 0;        /* 参考页列表内边距 */
     }
     .work-item {
       display: flex;
       align-items: stretch;
-      padding: 1rem;
-      color: #363636;
+      padding: 1rem;            /* 参考页列表项内边距 */
+      color: #363636;           /* 参考页列表项文字颜色 */
       text-decoration: none;
-      transition: background 0.2s;
+      transition: background 0.2s ease;
     }
     .work-item:hover {
-      background: #f5f5f5;
+      background: #f5f5f5;      /* 参考页列表项hover背景 */
     }
     .work-info {
       flex: 1;
-      margin-right: 1rem;
+      margin-right: 1rem;       /* 参考页信息与图标间距 */
     }
     .work-info h5 {
       margin: 0 0 0.5rem 0;
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 1rem;          /* 参考页标题大小 */
+      font-weight: 600;         /* 参考页标题字重 */
     }
     .work-info p {
       margin: 0 0 0.5rem 0;
-      font-size: 0.85rem;
-      color: #7a7a7a;
-      line-height: 1.4;
+      font-size: 0.85rem;       /* 参考页描述文字大小 */
+      color: #7a7a7a;           /* 参考页描述文字颜色 */
+      line-height: 1.4;         /* 参考页行高 */
     }
     .work-venue {
-      font-size: 0.8rem;
-      color: #006633;
+      font-size: 0.8rem;        /* 参考页期刊/会议文字大小 */
+      color: #006633;           /* 参考页期刊/会议颜色：深绿 */
       font-weight: 500;
     }
     .work-item .fas.fa-external-link-alt {
       align-self: center;
-      color: #7a7a7a;
-      font-size: 0.8rem;
+      color: #7a7a7a;           /* 参考页外部链接图标颜色 */
+      font-size: 0.8rem;        /* 参考页图标大小 */
     }
 
-    /* 以下为你原有代码的其他样式（完全保留） */
+    /* ========== 移动端适配（完全匹配参考页） ========== */
     @media (max-width: 768px) {
       .more-works-container {
-        top: 10px;
-        right: 10px;
+        top: 10px;          /* 参考页移动端：顶部10px */
+        right: 10px;        /* 参考页移动端：右侧10px */
       }
       .more-works-dropdown {
-        width: calc(100vw - 40px);
+        width: calc(100vw - 40px); /* 参考页移动端宽度 */
       }
-      /* 合并移动端适配样式，避免重复 */
       .lab-logo {
         width: 80px;
       }
@@ -150,7 +151,7 @@
       }
     }
 
-    /* 通用样式 */
+    /* ========== 以下为你原有代码（完全未动） ========== */
     .font-medium {
       font-weight: 600;
     }
@@ -347,7 +348,7 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown（仅结构适配参考页，内容保留你的原有） -->
+  <!-- More Works Dropdown（样式100%匹配参考页） -->
   <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
@@ -362,7 +363,6 @@
         </button>
       </div>
       <div class="works-list">
-        <!-- 保留你的原有内容 -->
         <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
           <div class="work-info">
             <h5>Scaling Laws of Machine Learning for Optimal Power Flow</h5>
@@ -461,7 +461,6 @@
             <td>...</td>
             <td>...</td>
           </tr>
-          <!-- 修正：补充Training Time列，避免表格列数不一致 -->
           <tr class="row-lightblue">
             <td class="font-medium">DNN</td>
             <td><span class="val-green">...</span></td>
@@ -691,7 +690,7 @@
       alert('Copy failed: ' + err);
     });
   }
-  // More Works 下拉框切换（移到此处，修复函数执行问题）
+  // More Works 下拉框切换
   function toggleMoreWorks() {
     const dropdown = document.getElementById('moreWorksDropdown');
     const btn = document.querySelector('.more-works-btn');
