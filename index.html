@@ -5,203 +5,180 @@
   <link rel="icon" href="static/images/webpage_logo.ico" type="image/x-icon">
   
   <style>
-
-  .more-works-container {
-  position: fixed; /* 固定在页面右上角，不随滚动消失 */
-  top: 20px;
-  right: 20px;
-  z-index: 998; /* 低于滚动到顶部按钮，高于页面内容 */
-}
-
-/* More Works 按钮样式 */
-.more-works-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #363636;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.2s;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.more-works-btn:hover {
-  background: #212121;
-}
-.dropdown-arrow {
-  font-size: 0.7rem;
-  transition: transform 0.2s;
-}
-/* 按钮点击后箭头旋转 */
-.more-works-btn.active .dropdown-arrow {
-  transform: rotate(180deg);
-}
-
-/* 下拉框样式 */
-.more-works-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  margin-top: 0.5rem;
-  width: 380px; /* 固定宽度，避免排版错乱 */
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  padding: 0;
-  list-style: none;
-  display: none; /* 默认隐藏 */
-  max-height: 70vh; /* 限制高度，避免溢出屏幕 */
-  overflow-y: auto; /* 内容过多时滚动 */
-  z-index: 999;
-}
-/* 下拉框显示状态 */
-.more-works-dropdown.show {
-  display: block;
-}
-
-/* 下拉框头部 */
-.dropdown-header {
-  padding: 1rem;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.dropdown-header h4 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #363636;
-}
-.close-btn {
-  background: transparent;
-  border: none;
-  color: #7a7a7a;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 0.25rem;
-  border-radius: 50%;
-}
-.close-btn:hover {
-  background: #f5f5f5;
-  color: #363636;
-}
-
-/* 论文列表项 */
-.works-list {
-  padding: 0.5rem 0;
-}
-.work-item {
-  display: flex;
-  align-items: stretch;
-  padding: 1rem;
-  color: #363636;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.work-item:hover {
-  background: #f5f5f5;
-}
-.work-info {
-  flex: 1;
-  margin-right: 1rem;
-}
-.work-info h5 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1rem;
-  font-weight: 600;
-}
-.work-info p {
-  margin: 0 0 0.5rem 0;
-  font-size: 0.85rem;
-  color: #7a7a7a;
-  line-height: 1.4;
-}
-.work-venue {
-  font-size: 0.8rem;
-  color: #006633; /* 和页面主色调统一 */
-  font-weight: 500;
-}
-.work-item .fas.fa-external-link-alt {
-  align-self: center;
-  color: #7a7a7a;
-  font-size: 0.8rem;
-}
-
-/* 移动端适配：缩小下拉框宽度 */
-@media (max-width: 768px) {
-  .more-works-container {
-    top: 10px;
-    right: 10px;
-  }
-  .more-works-dropdown {
-    width: calc(100vw - 40px); /* 占满屏幕宽度（留边距） */
-  }
-}
-    
-  .font-medium {
-  font-weight: 600;
-}
-    
-  .lab-logo {
-  width: 120px; /* 控制Logo宽度，可根据实际调整 */
-  height: auto; /* 自动等比缩放，避免变形 */
-  display: inline-block; /* 确保居中显示 */
-}
-
-/* 移动端Logo适配（可选） */
-@media (max-width: 768px) {
-  .lab-logo {
-    width: 80px; /* 手机端缩小Logo */
-  }
-}
-    
-  .no-wrap-title {
-  white-space: nowrap; /* 核心：禁止换行 */
-  margin: 0 auto;      /* 确保标题居中 */
-  display: inline-block; /* 适配居中+不换行 */
-}
-
-/* 小屏幕（手机）适配：恢复换行，避免溢出 */
-@media (max-width: 480px) {
-  .no-wrap-title {
-    white-space: normal; /* 小屏幕允许换行 */
-    width: 100%;         /* 占满容器宽度 */
-  }
-}
-    .opf-art-title {
-      font-size: 5rem !important; 
-      line-height: 1.2;         
-      font-weight: 800;     
-      text-shadow: 2px 2px 4px rgba(0, 40, 20, 0.3); 
-      word-break: break-all;     
+    /* More Works 模块样式 */
+    .more-works-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 998;
     }
-
-    .text-blue { 
-      color: #006633 !important;  
+    .more-works-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #363636;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .text-purple { 
-      color: #00CC66 !important;  
+    .more-works-btn:hover {
+      background: #212121;
     }
-
+    .dropdown-arrow {
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+    }
+    .more-works-btn.active .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+    .more-works-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 0.5rem;
+      width: 380px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 0;
+      list-style: none;
+      display: none;
+      max-height: 70vh;
+      overflow-y: auto;
+      z-index: 999;
+    }
+    .more-works-dropdown.show {
+      display: block;
+    }
+    .dropdown-header {
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .dropdown-header h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #363636;
+    }
+    .close-btn {
+      background: transparent;
+      border: none;
+      color: #7a7a7a;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.25rem;
+      border-radius: 50%;
+    }
+    .close-btn:hover {
+      background: #f5f5f5;
+      color: #363636;
+    }
+    .works-list {
+      padding: 0.5rem 0;
+    }
+    .work-item {
+      display: flex;
+      align-items: stretch;
+      padding: 1rem;
+      color: #363636;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .work-item:hover {
+      background: #f5f5f5;
+    }
+    .work-info {
+      flex: 1;
+      margin-right: 1rem;
+    }
+    .work-info h5 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .work-info p {
+      margin: 0 0 0.5rem 0;
+      font-size: 0.85rem;
+      color: #7a7a7a;
+      line-height: 1.4;
+    }
+    .work-venue {
+      font-size: 0.8rem;
+      color: #006633;
+      font-weight: 500;
+    }
+    .work-item .fas.fa-external-link-alt {
+      align-self: center;
+      color: #7a7a7a;
+      font-size: 0.8rem;
+    }
     @media (max-width: 768px) {
+      .more-works-container {
+        top: 10px;
+        right: 10px;
+      }
+      .more-works-dropdown {
+        width: calc(100vw - 40px);
+      }
+      /* 合并移动端适配样式，避免重复 */
+      .lab-logo {
+        width: 80px;
+      }
       .opf-art-title {
         font-size: 3rem !important;
       }
-      /* 小屏幕表格横向滚动 */
       .table-wrapper {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
       }
     }
 
-    .sup-1 { color: #006633; }      
-    .sup-2 { color: #004422; }      
-    .sup-3 { color: #009944; }      
+    /* 通用样式 */
+    .font-medium {
+      font-weight: 600;
+    }
+    .lab-logo {
+      width: 120px;
+      height: auto;
+      display: inline-block;
+    }
+    .no-wrap-title {
+      white-space: nowrap;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    @media (max-width: 480px) {
+      .no-wrap-title {
+        white-space: normal;
+        width: 100%;
+      }
+    }
+    .opf-art-title {
+      font-size: 5rem !important;
+      line-height: 1.2;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0, 40, 20, 0.3);
+      word-break: break-all;
+    }
+    .text-blue {
+      color: #006633 !important;
+    }
+    .text-purple {
+      color: #00CC66 !important;
+    }
+    .sup-1 { color: #006633; }
+    .sup-2 { color: #004422; }
+    .sup-3 { color: #009944; }
     .sup-corr { color: #006633; }
 
+    /* 表格样式 */
     .leaderboard-table {
       width: 100%;
       border-collapse: collapse;
@@ -209,30 +186,28 @@
       margin: 0 auto;
     }
     .leaderboard-table thead tr {
-     background: #ffffff !important;
-     color: #212121 !important;
-     border: 1px solid #eee;
-     font-weight: 700; /* 表头文字加粗 */
+      background: #ffffff !important;
+      color: #212121 !important;
+      border: 1px solid #eee;
+      font-weight: 700;
     }
     .leaderboard-table th, .leaderboard-table td {
       padding: 0.75rem 1rem;
       text-align: center;
-      border: 1px solid #eee; /* 增加细边框，提升可读性 */
+      border: 1px solid #eee;
     }
-    .leaderboard-table th:first-child, 
+    .leaderboard-table th:first-child,
     .leaderboard-table td:first-child,
     .leaderboard-table td:nth-child(2) {
-      text-align: left; /* 仅Type/Method列左对齐 */
+      text-align: left;
     }
-    /* 行背景色（统一命名，避免冲突） */
     .row-lightblue { background: #e3f2fd !important; }
     .row-lightgreen { background: #e8f5e9 !important; }
     .row-lightyellow { background: #fff8e1 !important; }
     .row-lightgray { background: #f5f5f5 !important; }
-    /* 数值颜色（正负区分） */
-    .val-green { color: #2e7d32 !important; } /* 正向绿色 */
-    .val-red { color: #c62828 !important; }   /* 负向红色 */
-    
+    .val-green { color: #2e7d32 !important; }
+    .val-red { color: #c62828 !important; }
+
     /* 滚动到顶部按钮 */
     .scroll-to-top {
       position: fixed;
@@ -253,6 +228,7 @@
       align-items: center;
       justify-content: center;
     }
+
     /* BibTeX复制按钮 */
     .copy-bibtex-btn {
       background: #363636;
@@ -267,6 +243,7 @@
     .copy-bibtex-btn:hover {
       background: #212121;
     }
+
     /* 排行榜标题下划线 */
     .leaderboard-title-underline {
       width: 80px;
@@ -336,19 +313,12 @@
     "publisher": {"@type": "Organization", "name": "Conference/Journal Name"},
     "url": "https://ml-opf-bench-webpage.vercel.app/",
     "keywords": ["Power system operations", "Machine Learning", "Optimization", "Optimal power flow"],
-    "abstract": "The Optimal Power Flow (OPF) problem is a fundamental optimization task in power system operations, growing more challenging with grid complexity and real-time demands. Machine learning (ML) approaches offer fast inference and robustness, but the ML-for-OPF landscape is fragmented due to inconsistent test cases, metrics, and pipelines. ML-OPF-Bench addresses this gap as a unified benchmarking suite for evaluating ML models on OPF tasks across multiple performance dimensions.",
+    "abstract": "The Optimal Power Flow (OPF) problem is a fundamental optimization task in power system operations, growing more challenging with grid complexity and real-time demands. Machine learning (ML) approaches offer fast inference and robustness, but the ML-for-OPF landscape is fragmented due to inconsistent test cases, metrics, and pipelines. ML-OPF-Bench addresses this gap as a unified benchmarking suite for evaluating ML models on OPF tasks across multiple dimensions of performance.",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/"
   }
   </script>
-  function toggleMoreWorks() {
-  const dropdown = document.getElementById('moreWorksDropdown');
-  const btn = document.querySelector('.more-works-btn');
-  // 切换显示/隐藏
-  dropdown.classList.toggle('show');
-  // 按钮激活状态（箭头旋转）
-  btn.classList.toggle('active');
-}
+  
   <!-- Website Structured Data -->
   <script type="application/ld+json">
   {
@@ -367,42 +337,40 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown（位置不变，结构微调） -->
-<div class="more-works-container">
-  <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-    <i class="fas fa-flask"></i>
-    More Works
-    <i class="fas fa-chevron-down dropdown-arrow"></i>
-  </button>
-  <div class="more-works-dropdown" id="moreWorksDropdown">
-    <div class="dropdown-header">
-      <h4>More Works from Our Lab</h4>
-      <button class="close-btn" onclick="toggleMoreWorks()">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="works-list">
-      <!-- 示例1：替换为真实内容 -->
-      <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-        <div class="work-info">
-          <h5>Machine Learning for Power System Stability</h5>
-          <p>A novel ML framework to predict power system transient stability with 99.2% accuracy.</p>
-          <span class="work-venue">IEEE TSG 2024</span>
-        </div>
-        <i class="fas fa-external-link-alt"></i>
-      </a>
-      <!-- 示例2 -->
-      <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-        <div class="work-info">
-          <h5>Data-Driven OPF for Renewable Integration</h5>
-          <p>Data-driven OPF solver that reduces runtime by 80% for high-renewable grids.</p>
-          <span class="work-venue">ACC 2023</span>
-        </div>
-        <i class="fas fa-external-link-alt"></i>
-      </a>
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Machine Learning for Power System Stability</h5>
+            <p>A novel ML framework to predict power system transient stability with 99.2% accuracy.</p>
+            <span class="work-venue">IEEE TSG 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Data-Driven OPF for Renewable Integration</h5>
+            <p>Data-driven OPF solver that reduces runtime by 80% for high-renewable grids.</p>
+            <span class="work-venue">ACC 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
     </div>
   </div>
-</div>
   
 <main id="main-content">
   <section class="hero">
@@ -411,7 +379,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <div class="lab-logo-container mb-4">
-              <img src="static/images/Lab_Logo.png" alt="Artificial Phtsical Intelligence & Energy Lab" class="lab-logo">
+              <img src="static/images/Lab_Logo.png" alt="Artificial Physical Intelligence & Energy Lab" class="lab-logo">
             </div>
             <h1 class="title opf-art-title publication-title">
               <span class="text-blue">M</span><span class="text-purple">L</span>-<span class="text-blue">O</span><span class="text-purple">P</span><span class="text-blue">F</span>-<span class="text-blue">B</span><span class="text-purple">e</span><span class="text-blue">n</span><span class="text-purple">c</span><span class="text-blue">h</span>
@@ -461,34 +429,16 @@
   </section>
 </main>
 
-<!-- Paper Introduction -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Introduction</h2>
-        <div class="content has-text-justified">
-          <p>
-            The Optimal Power Flow (OPF) problem is one of the fundamental optimization tasks in power system operations and planning, which is frequently solved on a regular basis. As modern power systems grow in complexity—with increasing grid variability, and real-time operational demands—solving OPF efficiently and reliably under uncertainty has become more challenging than ever. In response, the research community has increasingly turned to machine learning (ML) approaches for OPF, motivated by the promise of fast inference, model-free approximation, and robust performance in scenarios where traditional optimization solvers may struggle. Despite rapid progress, the ML-for-OPF landscape is fragmented and difficult to compare in a rigorous, reproducible manner. Existing studies often use different test cases, data generation pipelines, input/output parameterizations, and evaluation metrics—making it hard to assess progress or determine which approaches are best suited for real-world deployment. To address this gap, we introduce ML-OPF-Bench, a unified benchmarking suite for evaluating ML models on OPF tasks across multiple dimensions of performance.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AC Leaderboard -->
+<!-- AC Leaderboard (修正标题为ML-ACOPF) -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- 标题 -->
     <div class="has-text-centered mb-4">
       <h2 class="title is-3 inline-block">
-        ML-DCOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
+        ML-ACOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
       </h2>
       <div class="leaderboard-title-underline"></div>
     </div>
 
-    <!-- 表格容器（小屏幕横向滚动） -->
     <div class="table-wrapper">
       <table class="leaderboard-table">
         <thead>
@@ -502,7 +452,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Base行 -->
           <tr class="row-lightblue">
             <td class="font-medium">IPOPT</td>
             <td>...</td>
@@ -511,17 +460,15 @@
             <td>...</td>
             <td>...</td>
           </tr>
-
-          <!-- CoT行 -->
+          <!-- 修正：补充Training Time列，避免表格列数不一致 -->
           <tr class="row-lightblue">
             <td class="font-medium">DNN</td>
             <td><span class="val-green">...</span></td>
             <td><span class="val-red">...</span></td>
             <td><span class="val-red">...</span></td>
             <td><span class="val-green">...</span></td>
+            <td><span class="val-red">...</span></td>
           </tr>
-
-          <!-- S1-RCI行 -->
           <tr class="row-lightgreen">
             <td class="font-medium">PINN(KKT)</td>
             <td><span class="val-red">...</span></td>
@@ -530,8 +477,6 @@
             <td><span class="val-green">...</span></td>
             <td><span class="val-green">...</span></td>
           </tr>
-
-          <!-- S1-CoVe行 -->
           <tr class="row-lightgreen">
             <td class="font-medium">PINN(Dual)</td>
             <td><span class="val-green">...</span></td>
@@ -540,8 +485,6 @@
             <td><span class="val-green">...</span></td>
             <td><span class="val-green">...</span></td>
           </tr>
-
-          <!-- S1-Self-Refine行 -->
           <tr class="row-lightgreen">
             <td class="font-medium">DeepOPF+</td>
             <td><span class="val-green">...</span></td>
@@ -550,8 +493,6 @@
             <td><span class="val-green">...</span></td>
             <td>-</td>
           </tr>
-
-          <!-- S2-Reflection-v2行 -->
           <tr class="row-lightyellow">
             <td class="font-medium">CNN</td>
             <td><span class="val-green">...</span></td>
@@ -569,7 +510,6 @@
 <!-- DC Leaderboard -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- 标题 -->
     <div class="has-text-centered mb-4">
       <h2 class="title is-3 inline-block">
         ML-DCOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
@@ -577,7 +517,6 @@
       <div class="leaderboard-title-underline"></div>
     </div>
 
-    <!-- 表格容器（小屏幕横向滚动） -->
     <div class="table-wrapper">
       <table class="leaderboard-table">
         <thead>
@@ -594,7 +533,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Base行 -->
           <tr class="row-lightblue">
             <td>-</td>
             <td class="font-medium">Base</td>
@@ -606,8 +544,6 @@
             <td>72.85</td>
             <td>75.18</td>
           </tr>
-
-          <!-- CoT行 -->
           <tr class="row-lightblue">
             <td>-</td>
             <td class="font-medium">CoT</td>
@@ -619,8 +555,6 @@
             <td><span class="val-red">70.42 (-2.43)</span></td>
             <td><span class="val-red">68.95 (-6.23)</span></td>
           </tr>
-
-          <!-- S1-RCI行 -->
           <tr class="row-lightgreen">
             <td class="font-medium">S1</td>
             <td class="font-medium">RCI</td>
@@ -632,8 +566,6 @@
             <td><span class="val-red">72.61 (-0.24)</span></td>
             <td><span class="val-red">71.42 (-3.76)</span></td>
           </tr>
-
-          <!-- S1-CoVe行 -->
           <tr class="row-lightgreen">
             <td class="font-medium">S1</td>
             <td class="font-medium">CoVe</td>
@@ -645,8 +577,6 @@
             <td><span class="val-green">77.29 (+4.44)</span></td>
             <td><span class="val-green">79.84 (+4.66)</span></td>
           </tr>
-
-          <!-- S1-Self-Refine行 -->
           <tr class="row-lightgreen">
             <td class="font-medium">S1</td>
             <td class="font-medium">Self-Refine</td>
@@ -658,8 +588,6 @@
             <td><span class="val-green">79.65 (+6.80)</span></td>
             <td>-</td>
           </tr>
-
-          <!-- S2-Reflection-v2行 -->
           <tr class="row-lightyellow">
             <td class="font-medium">S2</td>
             <td class="font-medium">Reflection-v2</td>
@@ -671,8 +599,6 @@
             <td><span class="val-green">79.28 (+6.43)</span></td>
             <td>-</td>
           </tr>
-
-          <!-- Average行 -->
           <tr class="row-lightgray">
             <td>-</td>
             <td class="font-medium">Average</td>
@@ -695,7 +621,6 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <!-- 关键：给h2添加自定义类 no-wrap-title，并调整样式 -->
         <h2 class="title is-3 no-wrap-title">Evaluation and Conclusion</h2>
         <div class="content has-text-justified">
           <p>
@@ -743,7 +668,7 @@
   </div>
 </footer>
 
-<!-- Critical JS (放在底部，提升加载速度) -->
+<!-- Critical JS -->
 <script>
   // 滚动到顶部
   function scrollToTop() {
@@ -765,6 +690,13 @@
       alert('Copy failed: ' + err);
     });
   }
+  // More Works 下拉框切换（移到此处，修复函数执行问题）
+  function toggleMoreWorks() {
+    const dropdown = document.getElementById('moreWorksDropdown');
+    const btn = document.querySelector('.more-works-btn');
+    dropdown.classList.toggle('show');
+    btn.classList.toggle('active');
+  }
 </script>
 
 <!-- 非关键JS（异步加载） -->
@@ -772,8 +704,6 @@
 <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/js/bulma-slider.min.js"></script>
-<!-- 本地JS（如有） -->
-<!-- <script defer src="static/js/index.js"></script> -->
 
 </body>
 </html>
