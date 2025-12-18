@@ -5,7 +5,7 @@
   <link rel="icon" href="static/images/webpage_logo.ico" type="image/x-icon">
   
   <style>
-    /* More Works 模块样式 */
+    /* More Works 模块样式（替换为参考页样式） */
     .more-works-container {
       position: fixed;
       top: 20px;
@@ -55,6 +55,7 @@
     .more-works-dropdown.show {
       display: block;
     }
+    /* 参考页样式适配 - dropdown-header */
     .dropdown-header {
       padding: 1rem;
       border-bottom: 1px solid #eee;
@@ -66,6 +67,7 @@
       margin: 0;
       font-size: 1.1rem;
       color: #363636;
+      font-weight: 600;
     }
     .close-btn {
       background: transparent;
@@ -75,11 +77,17 @@
       font-size: 1rem;
       padding: 0.25rem;
       border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .close-btn:hover {
       background: #f5f5f5;
       color: #363636;
     }
+    /* 参考页样式适配 - works-list */
     .works-list {
       padding: 0.5rem 0;
     }
@@ -119,6 +127,8 @@
       color: #7a7a7a;
       font-size: 0.8rem;
     }
+
+    /* 以下为你原有代码的其他样式（完全保留） */
     @media (max-width: 768px) {
       .more-works-container {
         top: 10px;
@@ -337,7 +347,7 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
+  <!-- More Works Dropdown（仅结构适配参考页，内容保留你的原有） -->
   <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
@@ -352,6 +362,7 @@
         </button>
       </div>
       <div class="works-list">
+        <!-- 保留你的原有内容 -->
         <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
           <div class="work-info">
             <h5>Machine Learning for Power System Stability</h5>
