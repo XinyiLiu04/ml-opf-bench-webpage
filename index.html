@@ -437,7 +437,7 @@
   <div class="container is-max-desktop">
     <div class="has-text-centered mb-4">
       <h2 class="title is-3 inline-block">
-        ML-ACOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
+        ML-DCOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
       </h2>
       <div class="leaderboard-title-underline"></div>
     </div>
@@ -514,7 +514,7 @@
   <div class="container is-max-desktop">
     <div class="has-text-centered mb-4">
       <h2 class="title is-3 inline-block">
-        ML-DCOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
+        ML-ACOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
       </h2>
       <div class="leaderboard-title-underline"></div>
     </div>
@@ -523,94 +523,118 @@
       <table class="leaderboard-table">
         <thead>
           <tr>
-            <th>Type</th>
             <th>Method</th>
-            <th>Voltage Deviation (↓)</th>
-            <th>Power Loss (↓)</th>
-            <th>Feasibility Rate (↑)</th>
-            <th>Runtime (ms) (↓)</th>
-            <th>MAE (↓)</th>
-            <th>RMSE (↓)</th>
-            <th>Accuracy (↑)</th>
+            <th>Accuracy (MAE Pg%)</th>
+            <th>Accuracy (MAE Vm%)</th>
+            <th>Feasibility (Viol Pg MW)</th>
+            <th>Feasibility (Viol Qg MVar)</th>
+            <th>Feasibility (Viol Vm KV)</th>
+            <th>Feasibility (Viol Branch %))</th>
+            <th>Inference Time (ms) (↓)</th>
+            <th>Training Time (s)</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-lightblue">
-            <td>-</td>
-            <td class="font-medium">Base</td>
-            <td>78.45</td>
-            <td>77.89</td>
-            <td>22.31</td>
-            <td>79.62</td>
-            <td>58.74</td>
-            <td>72.85</td>
-            <td>75.18</td>
+            <td class="font-medium">IPOPT</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
           </tr>
           <tr class="row-lightblue">
             <td>-</td>
-            <td class="font-medium">CoT</td>
-            <td><span class="val-green">81.27 (+2.82)</span></td>
-            <td><span class="val-red">76.15 (-1.74)</span></td>
-            <td><span class="val-red">20.19 (-2.12)</span></td>
-            <td><span class="val-green">85.38 (+5.76)</span></td>
-            <td><span class="val-red">57.81 (-0.93)</span></td>
-            <td><span class="val-red">70.42 (-2.43)</span></td>
-            <td><span class="val-red">68.95 (-6.23)</span></td>
+            <td class="font-medium">DNN</td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
           </tr>
-          <tr class="row-lightgreen">
-            <td class="font-medium">S1</td>
-            <td class="font-medium">RCI</td>
-            <td><span class="val-red">77.29 (-1.16)</span></td>
-            <td><span class="val-red">74.36 (-3.53)</span></td>
-            <td><span class="val-green">23.87 (+1.56)</span></td>
-            <td><span class="val-green">80.15 (+0.53)</span></td>
-            <td><span class="val-green">64.28 (+5.54)</span></td>
-            <td><span class="val-red">72.61 (-0.24)</span></td>
-            <td><span class="val-red">71.42 (-3.76)</span></td>
-          </tr>
-          <tr class="row-lightgreen">
-            <td class="font-medium">S1</td>
-            <td class="font-medium">CoVe</td>
-            <td><span class="val-green">80.93 (+2.48)</span></td>
-            <td><span class="val-red">76.58 (-1.31)</span></td>
-            <td><span class="val-green">40.15 (+17.84)</span></td>
-            <td><span class="val-green">86.12 (+6.50)</span></td>
-            <td><span class="val-green">68.97 (+10.23)</span></td>
-            <td><span class="val-green">77.29 (+4.44)</span></td>
-            <td><span class="val-green">79.84 (+4.66)</span></td>
-          </tr>
-          <tr class="row-lightgreen">
-            <td class="font-medium">S1</td>
-            <td class="font-medium">Self-Refine</td>
-            <td><span class="val-green">83.78 (+5.33)</span></td>
-            <td><span class="val-green">79.12 (+1.23)</span></td>
-            <td><span class="val-green">43.82 (+21.51)</span></td>
-            <td><span class="val-green">85.79 (+6.17)</span></td>
-            <td><span class="val-green">67.34 (+8.60)</span></td>
-            <td><span class="val-green">79.65 (+6.80)</span></td>
+          <tr class="row-lightblue">
             <td>-</td>
+            <td class="font-medium">PINN</td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+          </tr>
+          <tr class="row-lightgreen">
+            <td class="font-medium">SL-RL (TD3)</td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+          </tr>
+          <tr class="row-lightgreen">
+            <td class="font-medium">SL-RL (PPO)</td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-red">... (-...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+          </tr>
+          <tr class="row-lightgreen">
+            <td class="font-medium">DC3</td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td>...</td>
+            <td>...</td>
           </tr>
           <tr class="row-lightyellow">
-            <td class="font-medium">S2</td>
-            <td class="font-medium">Reflection-v2</td>
-            <td><span class="val-green">86.45 (+8.00)</span></td>
-            <td><span class="val-green">80.27 (+2.38)</span></td>
-            <td><span class="val-green">29.46 (+7.15)</span></td>
-            <td><span class="val-green">83.47 (+3.85)</span></td>
-            <td><span class="val-green">66.19 (+7.45)</span></td>
-            <td><span class="val-green">79.28 (+6.43)</span></td>
-            <td>-</td>
+            <td class="font-medium">Lagrangian</td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td>...</td>
+            <td>...</td>
           </tr>
           <tr class="row-lightgray">
-            <td>-</td>
-            <td class="font-medium">Average</td>
-            <td><span class="val-green">81.92 (+3.47)</span></td>
-            <td><span class="val-green">78.15 (+0.26)</span></td>
-            <td><span class="val-green">34.68 (+12.37)</span></td>
-            <td><span class="val-red">78.91 (-0.71)</span></td>
-            <td><span class="val-green">65.83 (+7.09)</span></td>
-            <td><span class="val-green">77.92 (+5.07)</span></td>
-            <td><span class="val-green">76.21 (+1.03)</span></td>
+            <td class="font-medium">Hybrid</td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-red">...(-...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+          </tr>
+          <tr class="row-lightgray">
+            <td class="font-medium">GNN</td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-red">...(-...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
+            <td><span class="val-green">... (+...)</span></td>
           </tr>
         </tbody>
       </table>
