@@ -153,7 +153,7 @@
       }
     }
 
-    /* ========== 以下为你原有代码（完全未动） ========== */
+    /* ========== 以下为你原有代码（完全未动，仅修改排行榜下划线颜色） ========== */
     .font-medium {
       font-weight: 600;
     }
@@ -257,11 +257,11 @@
       background: #212121;
     }
 
-    /* 排行榜标题下划线 */
+    /* 排行榜标题下划线（修改：红色改为墨绿色 #006633，与大标题颜色一致） */
     .leaderboard-title-underline {
       width: 80px;
       height: 3px;
-      background: #e91e63;
+      background: #006633; /* 关键修改：替换红色为墨绿色 */
       margin: 0.5rem auto 2rem;
     }
   </style>
@@ -432,12 +432,14 @@
   </section>
 </main>
 
-  <!-- Abstract -->
+  <!-- Abstract（添加墨绿色下划线） -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3 no-wrap-title">Abstract</h2>
+        <!-- 新增：墨绿色下划线 -->
+        <div class="leaderboard-title-underline"></div>
         <div class="content has-text-justified">
           <p>
             ML-OPF-Bench is ...
@@ -448,14 +450,14 @@
   </div>
 </section>
   
-<!-- AC Leaderboard (修正标题为ML-ACOPF) -->
+<!-- AC Leaderboard (修正标题为ML-ACOPF，红线已改为墨绿色) -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="has-text-centered mb-4">
       <h2 class="title is-3 inline-block">
         ML-DCOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
       </h2>
-      <div class="leaderboard-title-underline"></div>
+      <div class="leaderboard-title-underline"></div> <!-- 已改为墨绿色 -->
     </div>
 
     <div class="table-wrapper">
@@ -525,14 +527,14 @@
   </div>
 </section>
   
-<!-- AC Leaderboard -->
+<!-- AC Leaderboard（红线已改为墨绿色） -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="has-text-centered mb-4">
       <h2 class="title is-3 inline-block">
         ML-ACOPF <i class="fa-solid fa-trophy text-yellow-500 ml-2 mr-2"></i> Leaderboard
       </h2>
-      <div class="leaderboard-title-underline"></div>
+      <div class="leaderboard-title-underline"></div> <!-- 已改为墨绿色 -->
     </div>
 
     <div class="table-wrapper">
@@ -656,12 +658,14 @@
   </div>
 </section>
 
-<!-- Evaluation and Conclusion -->
+<!-- Evaluation and Conclusion（添加墨绿色下划线） -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3 no-wrap-title">Evaluation and Conclusion</h2>
+        <!-- 新增：墨绿色下划线 -->
+        <div class="leaderboard-title-underline"></div>
         <div class="content has-text-justified">
           <p>
             We find that...
