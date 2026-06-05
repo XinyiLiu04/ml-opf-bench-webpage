@@ -846,17 +846,17 @@
           border: 1px solid #e5e5e5;
           border-radius: 12px;
           padding: 1.5rem 1.75rem;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);  /* 卡片框，和 win-rate 一致 */
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);  
         }
         .gen-figrow {
           display: flex;
-          flex-wrap: wrap;            /* 窄屏自动堆叠 */
+          flex-wrap: wrap;          
           gap: 1.5rem;
           justify-content: center;
           align-items: flex-start;
         }
         .gen-figitem {
-          flex: 1 1 380px;            /* 两张等宽并排，过窄则换行 */
+          flex: 1 1 380px;            
           min-width: 300px;
           max-width: 500px;
         }
@@ -1121,16 +1121,16 @@
 
 <!-- Critical JS -->
 <script>
-  // 滚动到顶部
+ 
   function scrollToTop() {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
-  // 监听滚动显示/隐藏按钮
+ 
   window.addEventListener('scroll', function() {
     const btn = document.querySelector('.scroll-to-top');
     btn.classList.toggle('show', window.scrollY > 300);
   });
-  // 复制BibTeX
+  
   function copyBibTeX() {
     const text = document.getElementById('bibtex-code').textContent.trim();
     navigator.clipboard.writeText(text).then(() => {
@@ -1144,7 +1144,7 @@
 
 </script>
 
-<!-- 非关键JS（异步加载） -->
+
 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
