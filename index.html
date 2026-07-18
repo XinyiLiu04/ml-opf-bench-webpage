@@ -783,9 +783,12 @@
         <figcaption class="winrate-caption">
           <strong>Pairwise win-rate matrices.</strong> 
           Each cell is the win rate (%) of the row method <em>j</em> against the column
-          method <em>k</em> — how often <em>j</em> beats <em>k</em> across all test systems
-          and evaluation objectives (prediction accuracy, economic optimality, constraint
-          feasibility, and inference speed). Warmer cells mean the row method wins more often;
+          method <em>k</em> over <em>U=12</em> comparison units, where
+one unit is one (system, objective) pair formed by the three test
+systems (30/118/300-bus) and the four ranking objectives (prediction accuracy, economic optimality, constraint
+          feasibility, and inference speed), so every cell
+aggregates performance across all three systems. Ties are counted as
+half-wins. Warmer cells mean the row method wins more often;
           cooler cells mean it loses. Rows and columns are ordered by the overall ranking, so
           the strongest method sits at the top-left.
         </figcaption>
