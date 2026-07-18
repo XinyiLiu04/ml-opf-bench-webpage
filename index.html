@@ -380,17 +380,17 @@
           <!-- Pure Data-Driven -->
           <tr class="group-start">
             <td class="paradigm g-data" rowspan="3">Pure Data-Driven</td>
-            <td><span class="m-name">Linear Regression</span></td>
+            <td><span class="m-name">Linear Regression (LR)</span></td>
             <td>MSE</td>
             <td>None, linear approximation</td>
           </tr>
           <tr>
-            <td><span class="m-name">Deep Neural Network</span></td>
+            <td><span class="m-name">Deep Neural Network (DNN)</span></td>
             <td>MSE</td>
             <td>None, end-to-end learning</td>
           </tr>
           <tr>
-            <td><span class="m-name">Graph Neural Network</span></td>
+            <td><span class="m-name">Graph Neural Network (GNN)</span></td>
             <td>MSE</td>
             <td>None, topology-aware end-to-end learning</td>
           </tr>
@@ -398,17 +398,17 @@
           <!-- Physics-Informed -->
           <tr class="group-start">
             <td class="paradigm g-phys" rowspan="5">Physics-Informed</td>
-            <td><span class="m-name">Constraint Penalties</span></td>
+            <td><span class="m-name">Constraint Penalties (CP)</span></td>
             <td>MSE + violation penalties</td>
             <td>Soft penalty terms in loss</td>
           </tr>
           <tr>
-            <td><span class="m-name">Multiplier Updates</span></td>
+            <td><span class="m-name">Multiplier Updates (MU)</span></td>
             <td>MSE + Lagrangian dual</td>
             <td>Iterative Lagrangian dual scheme</td>
           </tr>
           <tr>
-            <td><span class="m-name">KKT Embedded</span></td>
+            <td><span class="m-name">KKT Embedded (KKT)</span></td>
             <td>Primal + dual + KKT residuals</td>
             <td>KKT conditions as differentiable layers</td>
           </tr>
@@ -418,7 +418,7 @@
             <td>No ground truth / supervised pre-training</td>
           </tr>
           <tr>
-            <td><span class="m-name">Reinforcement Learning</span></td>
+            <td><span class="m-name">Reinforcement Learning (RL)</span></td>
             <td>Reward (cost + violation)</td>
             <td>Soft penalty in reward; no ground truth</td>
           </tr>
@@ -426,17 +426,17 @@
           <!-- Hybrid -->
           <tr class="group-start">
             <td class="paradigm g-hybrid" rowspan="4">Hybrid</td>
-            <td><span class="m-name">QP Project (DC)</span></td>
+            <td><span class="m-name">QP Project (QP)</span></td>
             <td>MSE + violation penalties</td>
             <td>Convex QP projection via PTDF</td>
           </tr>
           <tr>
-            <td><span class="m-name">Q Correction (AC)</span></td>
+            <td><span class="m-name">Q Correction (QC)</span></td>
             <td>MSE</td>
             <td>Reactive power clip and power flow re-solve</td>
           </tr>
           <tr>
-            <td><span class="m-name">Feasibility Recovery (AC)</span></td>
+            <td><span class="m-name">Feasibility Recovery (FR)</span></td>
             <td>MSE + violation penalties</td>
             <td>Feasibility check with warm-start recovery</td>
           </tr>
