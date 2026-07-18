@@ -179,7 +179,7 @@
     "publisher": {"@type": "Organization", "name": "Conference/Journal Name"},
     "url": "https://ml-opf-bench-webpage.vercel.app/",
     "keywords": ["Power system operations", "Machine Learning", "Optimization", "Optimal power flow"],
-    "abstract": "Machine Learning (ML) offers fast inference for solving Optimal Power Flow (OPF), yet inconsistent test cases, implementations, and evaluation metrics across existing studies make it difficult to determine which methods are best suited for real-world deployment. We propose ML-OPF-Bench, a unified benchmark for both AC- and DC-OPF that evaluates representative ML algorithms under a consistent pipeline, ranks them with a multi-objective framework, and stress-tests them on scenarios probing scalability, robustness, and data efficiency. We find that accurate setpoint prediction does not imply operational feasibility, and that this gap widens under stress, where the top-ranked methods become among the least robust under heavy loading, with errors and violations rising by up to four orders of magnitude. Data scaling reveals that prediction error and constraint violations follow divergent trajectories. Error declines along a power law of diminishing returns, while violations remain largely unchanged, especially under the nonlinear AC formulation, showing that feasibility comes from constraint-enforcing mechanisms rather than more data. These results expose critical trade-offs between speed, accuracy, and feasibility and offer practical guidance for future ML-OPF design.",
+    "abstract": "Machine Learning (ML) promises a fast solution process for Optimal Power Flow (OPF), yet inconsistent test cases, implementations, and evaluation metrics across existing studies make it challenging to determine which algorithmic advances or methods are most critical for real-world deployment. We thus propose ML-OPF-Bench, a unified benchmark for AC- and DC-OPF that evaluates representative ML algorithms under a consistent pipeline, ranks them with a multi-objective framework, and stress-tests them on scenarios probing cross-system scaling, robustness to load-distribution shift, and data efficiency. We find that accurate setpoint prediction does not imply operational feasibility, and that this gap widens under stress, where the top-ranked methods become among the least robust under heavy loading, with errors and violations rising by up to four orders of magnitude. Data scaling reveals that prediction error and constraint violations follow divergent trajectories. These results expose critical trade-offs between speed, accuracy, and feasibility and offer practical guidance for future ML-OPF design.",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/"
   }
@@ -1084,7 +1084,9 @@ half-wins. Warmer cells mean the row method wins more often;
   <div class="card c3">
     <span class="tag">Data Efficiency</span>
     <h3>Feasibility is designed in</h3>
-    <p>More data lowers prediction error along a power law with steep diminishing returns, but barely touches constraint violations. Feasibility comes from architecture, not bigger datasets.</p>
+    <p>Additional data drives prediction error down along a power law with sharply diminishing returns, yet reduces constraint violations only under the linear DC formulation. Under AC, the
+the reactive-power term is nearly insensitive to data, suggesting that feasibility there is governed by constraint-enforcing
+mechanisms rather than by the volume of training data</p>
   </div>
 </div>
       </div>
